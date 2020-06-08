@@ -29,6 +29,12 @@ stages:
         
     - task: DotNetCoreCLI@2
       inputs:
+        command: 'build'
+        packagesToPack: 'src/CoreWf/System.Activities.csproj'
+        workingDirectory: src/CoreWf    
+    
+    - task: DotNetCoreCLI@2
+      inputs:
         command: 'pack'
         packagesToPack: 'src/CoreWf/System.Activities.csproj'
         versioningScheme: 'byBuildNumber'
