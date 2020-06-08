@@ -50,7 +50,6 @@ namespace System.Activities.Statements
         [DependsOn("Trigger")]
         public Activity Action { get; set; }
 
-        // TODO, 41221, remove this once we have well known attached properties.
         [DefaultValue("PickBranch")]
         public string DisplayName
         {
