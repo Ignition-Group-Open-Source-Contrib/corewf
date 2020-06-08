@@ -26,6 +26,12 @@ stages:
       name: 'PHP and Brandsites POOL' 
       
     steps:    
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'build'
+        packagesToPack: 'src/UiPath.Workflow/UiPath.Workflow.csproj'
+        workingDirectory: src/UiPath.Workflow
         
    
     - task: DotNetCoreCLI@2
