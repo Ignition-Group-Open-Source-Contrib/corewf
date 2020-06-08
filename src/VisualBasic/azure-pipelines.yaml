@@ -1,0 +1,47 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+    - master
+    - develop
+    - features/*
+  paths:
+    include:
+    - src/VisualBasic/*
+    exclude:
+    - README.md
+
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+stages:
+- stage: BuildPackPush
+  displayName: Build Pack and Push
+  jobs:  
+  - job: Build  
+    displayName: Build job
+    pool:
+      name: 'PHP and Brandsites POOL' 
+      
+    steps:    
+        
+   
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'pack'
+        packagesToPack: 'src/VisualBasic/Microsoft.CodeAnalysis.VisualBasic.Scripting.csproj'
+        versioningScheme: 'byBuildNumber'
+        workingDirectory: src/VisualBasic
+
+    - task: DotNetCoreCLI@2
+      displayName: Publishing to Ignition Feed 
+      continueOnError: true
+      inputs:
+        command: 'push'
+        packagesToPush: '$(System.ArtifactsDirectory)/**/*.nupkg'
+        nuGetFeedType: 'internal'
+        publishVstsFeed: '1bce5e35-7468-4602-b1d8-5d982e258f20'        
+
+ 
