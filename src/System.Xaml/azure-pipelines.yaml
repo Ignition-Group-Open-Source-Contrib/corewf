@@ -11,7 +11,7 @@ trigger:
     - features/*
   paths:
     include:
-    - **/System.Xaml/*
+    - src/System.Xaml/*
     exclude:
     - README.md
 
@@ -30,9 +30,9 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'pack'
-        packagesToPack: 'System.Xaml/System.Xaml.csproj'
+        packagesToPack: 'src/System.Xaml/System.Xaml.csproj'
         versioningScheme: 'byBuildNumber'
-        workingDirectory: System.Xaml
+        workingDirectory: src/System.Xaml
 
     - task: DotNetCoreCLI@2
       displayName: Publishing to Ignition Feed 
