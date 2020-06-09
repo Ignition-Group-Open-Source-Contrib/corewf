@@ -7,7 +7,7 @@
     <RootNamespace></RootNamespace>
     <SignAssembly>true</SignAssembly>
     <PublicSign>True</PublicSign>
-    <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
