@@ -13,7 +13,7 @@
     <NoWarn>$(NoWarn);NU5105</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Scripting" Version="2020.6.8.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Scripting" Version="2020.6.9.2" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="System.Activities" Version="2020.6.8.5" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
