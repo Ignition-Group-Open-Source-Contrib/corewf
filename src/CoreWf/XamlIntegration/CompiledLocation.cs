@@ -11,7 +11,7 @@ namespace System.Activities.XamlIntegration
     using System.Activities.Internals;
 
     [DataContract(Name = XD.CompiledLocation.Name, Namespace = XD.Runtime.Namespace)]
-    internal class CompiledLocation<T> : Location<T>
+    public class CompiledLocation<T> : Location<T>
     {
         private Func<T> getMethod;
         private Action<T> setMethod;
