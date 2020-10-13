@@ -12,7 +12,7 @@ namespace System.Activities.Statements
         internal const string PropertyName = "System.Compensation.CompensationToken";
         internal const long RootCompensationId = 0;
             
-        internal CompensationToken(CompensationTokenData tokenData)
+        public CompensationToken(CompensationTokenData tokenData)
         {
             this.CompensationId = tokenData.CompensationId;
         }

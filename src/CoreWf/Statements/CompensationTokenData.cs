@@ -9,9 +9,9 @@ namespace System.Activities.Statements
 
     [Fx.Tag.XamlVisible(false)]
     [DataContract]
-    internal class CompensationTokenData
+    public class CompensationTokenData
     {
-        internal CompensationTokenData(long compensationId, long parentCompensationId)
+        public CompensationTokenData(long compensationId, long parentCompensationId)
         {
             this.CompensationId = compensationId;
             this.ParentCompensationId = parentCompensationId;
