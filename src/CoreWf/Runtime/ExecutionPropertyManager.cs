@@ -7,6 +7,7 @@ namespace System.Activities.Runtime
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
     [DataContract]
     internal class ExecutionPropertyManager
@@ -27,6 +28,7 @@ namespace System.Activities.Runtime
         private ExecutionPropertyManager rootPropertyManager;
         private int exclusiveHandleCount;
 
+        
         public ExecutionPropertyManager(ActivityInstance owningInstance)
         {
             Fx.Assert(owningInstance != null, "null instance should be using the internal host-based ctor");
@@ -49,6 +51,7 @@ namespace System.Activities.Runtime
             }
         }
 
+        [JsonConstructor]
         public ExecutionPropertyManager(ActivityInstance owningInstance, ExecutionPropertyManager parentPropertyManager)
             : this(owningInstance)
         {
@@ -61,7 +64,7 @@ namespace System.Activities.Runtime
                 this.rootPropertyManager = parentPropertyManager.rootPropertyManager;
             }
         }
-
+        
         internal ExecutionPropertyManager(ActivityInstance owningInstance, Dictionary<string, ExecutionProperty> properties)
         {
             Fx.Assert(properties != null, "properties should never be null");
