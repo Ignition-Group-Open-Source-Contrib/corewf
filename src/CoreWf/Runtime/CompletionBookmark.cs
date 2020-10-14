@@ -6,7 +6,7 @@ namespace System.Activities.Runtime
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal class CompletionBookmark
+    public class CompletionBookmark
     {
         private CompletionCallbackWrapper callbackWrapper;
 

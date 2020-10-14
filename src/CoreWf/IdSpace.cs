@@ -8,7 +8,7 @@ namespace System.Activities
     using System;
     using System.Collections.Generic;
 
-    internal class IdSpace
+    public class IdSpace
     {
         private int lastId;
         private IList<Activity> members;

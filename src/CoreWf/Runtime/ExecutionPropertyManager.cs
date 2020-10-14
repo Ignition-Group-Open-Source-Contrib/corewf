@@ -10,7 +10,7 @@ namespace System.Activities.Runtime
     using Newtonsoft.Json;
 
     [DataContract]
-    internal class ExecutionPropertyManager
+    public class ExecutionPropertyManager
     {
         private ActivityInstance owningInstance;
         private Dictionary<string, ExecutionProperty> properties;
@@ -51,7 +51,7 @@ namespace System.Activities.Runtime
             }
         }
 
-        [JsonConstructor]
+        
         public ExecutionPropertyManager(ActivityInstance owningInstance, ExecutionPropertyManager parentPropertyManager)
             : this(owningInstance)
         {
@@ -64,8 +64,9 @@ namespace System.Activities.Runtime
                 this.rootPropertyManager = parentPropertyManager.rootPropertyManager;
             }
         }
-        
-        internal ExecutionPropertyManager(ActivityInstance owningInstance, Dictionary<string, ExecutionProperty> properties)
+
+        [JsonConstructor]
+        public ExecutionPropertyManager(ActivityInstance owningInstance, Dictionary<string, ExecutionProperty> properties)
         {
             Fx.Assert(properties != null, "properties should never be null");
             this.owningInstance = owningInstance;
@@ -560,7 +561,7 @@ namespace System.Activities.Runtime
         }
 
         [DataContract]
-        internal class ExecutionProperty
+        public class ExecutionProperty
         {
             private string name;
             private object property;

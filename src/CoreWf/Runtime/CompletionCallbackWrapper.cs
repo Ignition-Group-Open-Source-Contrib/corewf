@@ -11,7 +11,7 @@ namespace System.Activities.Runtime
     [KnownType(typeof(ActivityCompletionCallbackWrapper))]
     [KnownType(typeof(DelegateCompletionCallbackWrapper))]
     [DataContract]
-    internal abstract class CompletionCallbackWrapper : CallbackWrapper
+    public abstract class CompletionCallbackWrapper : CallbackWrapper
     {
         private static readonly Type completionCallbackType = typeof(CompletionCallback);
         private static readonly Type[] completionCallbackParameters = new Type[] { typeof(NativeActivityContext), typeof(ActivityInstance) };

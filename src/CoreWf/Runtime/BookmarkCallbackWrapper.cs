@@ -8,12 +8,12 @@ namespace System.Activities.Runtime
     using System.Security;
 
     [DataContract]
-    internal class BookmarkCallbackWrapper : CallbackWrapper
+    public class BookmarkCallbackWrapper : CallbackWrapper
     {
         private static readonly Type bookmarkCallbackType = typeof(BookmarkCallback);
         private static readonly Type[] bookmarkCallbackParameters = new Type[] { typeof(NativeActivityContext), typeof(Bookmark), typeof(object) };
 
-        internal BookmarkCallbackWrapper() { }
+        public BookmarkCallbackWrapper() { }
 
         public BookmarkCallbackWrapper(BookmarkCallback callback, ActivityInstance owningInstance)
             : this(callback, owningInstance, BookmarkOptions.None)

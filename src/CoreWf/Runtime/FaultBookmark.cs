@@ -7,7 +7,7 @@ namespace System.Activities.Runtime
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal class FaultBookmark
+    public class FaultBookmark
     {
         private FaultCallbackWrapper callbackWrapper;
 

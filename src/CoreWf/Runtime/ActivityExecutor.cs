@@ -23,7 +23,7 @@ namespace System.Activities.Runtime
 #endif
 
     [DataContract(Name = XD.Executor.Name, Namespace = XD.Runtime.Namespace)]
-    internal class ActivityExecutor : IEnlistmentNotification
+    public class ActivityExecutor : IEnlistmentNotification
     {
         private static ReadOnlyCollection<BookmarkInfo> s_emptyBookmarkInfoCollection;
 
@@ -4473,7 +4473,7 @@ namespace System.Activities.Runtime
             }
         }
 
-        private class PoolOfEmptyWorkItems : Pool<EmptyWorkItem>
+        public class PoolOfEmptyWorkItems : Pool<EmptyWorkItem>
         {
             protected override EmptyWorkItem CreateNew()
             {

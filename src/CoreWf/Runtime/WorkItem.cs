@@ -10,7 +10,7 @@ namespace System.Activities.Runtime
     using System.Activities.Internals;
 
     [DataContract]
-    internal abstract class WorkItem
+    public abstract class WorkItem
     {
         private static AsyncCallback associateCallback;
         private static AsyncCallback trackingCallback;

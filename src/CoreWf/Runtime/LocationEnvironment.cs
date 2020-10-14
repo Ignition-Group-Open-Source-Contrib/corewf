@@ -13,7 +13,7 @@ namespace System.Activities.Runtime
 
 #endif
     [DataContract]
-    internal sealed class LocationEnvironment
+    public sealed class LocationEnvironment
 #if NET45
                 : ActivityInstanceMap.IActivityReferenceWithEnvironment
 #else
@@ -42,22 +42,22 @@ namespace System.Activities.Runtime
         private int referenceCountMinusOne;
         private bool hasOwnerCompleted;
 
-        internal LocationEnvironment() { }
+        public LocationEnvironment() { }
 
         // this ctor overload is to be exclusively used by DU
         // for creating a LocationEnvironment for "noSymbols" ActivityInstance
-        internal LocationEnvironment(LocationEnvironment parent, int capacity) 
+        public LocationEnvironment(LocationEnvironment parent, int capacity) 
             : this(null, null, parent, capacity)
         {
         }
-       
-        internal LocationEnvironment(ActivityExecutor executor, Activity definition)
+
+        public LocationEnvironment(ActivityExecutor executor, Activity definition)
         {
             this.executor = executor;
             this.Definition = definition;
         }
 
-        internal LocationEnvironment(ActivityExecutor executor, Activity definition, LocationEnvironment parent, int capacity)
+        public LocationEnvironment(ActivityExecutor executor, Activity definition, LocationEnvironment parent, int capacity)
             : this(executor, definition)
         {
             this.parent = parent;

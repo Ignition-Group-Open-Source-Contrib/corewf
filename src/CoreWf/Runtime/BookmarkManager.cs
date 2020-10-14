@@ -10,7 +10,7 @@ namespace System.Activities.Runtime
     using System.Activities.Internals;
 
     [DataContract(Name = XD.Runtime.BookmarkManager, Namespace = XD.Runtime.Namespace)]
-    internal class BookmarkManager
+    public class BookmarkManager
     {
         private long nextId;
         private Dictionary<Bookmark, BookmarkCallbackWrapper> bookmarks;

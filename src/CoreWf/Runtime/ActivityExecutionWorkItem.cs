@@ -7,7 +7,7 @@ namespace System.Activities.Runtime
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal abstract class ActivityExecutionWorkItem : WorkItem
+    public abstract class ActivityExecutionWorkItem : WorkItem
     {
         private bool skipActivityInstanceAbort;
 

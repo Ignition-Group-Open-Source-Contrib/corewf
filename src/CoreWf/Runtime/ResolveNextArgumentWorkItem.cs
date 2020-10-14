@@ -7,7 +7,7 @@ namespace System.Activities.Runtime
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal class ResolveNextArgumentWorkItem : ActivityExecutionWorkItem
+    public class ResolveNextArgumentWorkItem : ActivityExecutionWorkItem
     {
         private int nextArgumentIndex;
         private IDictionary<string, object> argumentValueOverrides;

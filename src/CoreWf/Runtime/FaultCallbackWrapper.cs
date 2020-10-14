@@ -8,7 +8,7 @@ namespace System.Activities.Runtime
     using System.Security;
 
     [DataContract]
-    internal class FaultCallbackWrapper : CallbackWrapper
+    public class FaultCallbackWrapper : CallbackWrapper
     {
         private static readonly Type faultCallbackType = typeof(FaultCallback);
         private static readonly Type[] faultCallbackParameters = new Type[] { typeof(NativeActivityFaultContext), typeof(Exception), typeof(ActivityInstance) };

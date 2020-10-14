@@ -7,7 +7,7 @@ namespace System.Activities
     using System.Activities.Runtime;
     using System.Activities.Internals;
 
-    internal class AsyncOperationContext
+    public class AsyncOperationContext
     {
         private static AsyncCallback onResumeAsyncCodeActivityBookmark;
         private ActivityExecutor executor;
@@ -15,7 +15,7 @@ namespace System.Activities
         private bool hasCanceled;
         private bool hasCompleted;
 
-        internal AsyncOperationContext(ActivityExecutor executor, ActivityInstance owningActivityInstance)
+        public AsyncOperationContext(ActivityExecutor executor, ActivityInstance owningActivityInstance)
         {
             this.executor = executor;
             this.owningActivityInstance = owningActivityInstance;

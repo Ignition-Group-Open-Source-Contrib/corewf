@@ -6,11 +6,11 @@ namespace System.Activities.Runtime
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal class ActivityInstanceReference : ActivityInstanceMap.IActivityReference
+    public class ActivityInstanceReference : ActivityInstanceMap.IActivityReference
     {
         private ActivityInstance activityInstance;
 
-        internal ActivityInstanceReference(ActivityInstance activity)
+        public ActivityInstanceReference(ActivityInstance activity)
         {
             this.activityInstance = activity;
         }
