@@ -80,20 +80,20 @@ namespace System.Activities.Runtime
         }
 
         [DataMember(EmitDefaultValue = false, Name = "properties")]
-        internal Dictionary<string, ExecutionProperty> SerializedProperties
+        public Dictionary<string, ExecutionProperty> SerializedProperties
         {
             get { return this.properties; }
             set { this.properties = value; }
         }
 
         [DataMember(EmitDefaultValue = false, Name = "exclusiveHandleCount")]
-        internal int SerializedExclusiveHandleCount
+        public int SerializedExclusiveHandleCount
         {
             get { return this.exclusiveHandleCount; }
             set { this.exclusiveHandleCount = value; }
         }
 
-        internal Dictionary<string, ExecutionProperty> Properties
+        public Dictionary<string, ExecutionProperty> Properties
         {
             get
             {
@@ -101,7 +101,7 @@ namespace System.Activities.Runtime
             }
         }
 
-        internal bool HasExclusiveHandlesInScope
+        public bool HasExclusiveHandlesInScope
         {
             get
             {
