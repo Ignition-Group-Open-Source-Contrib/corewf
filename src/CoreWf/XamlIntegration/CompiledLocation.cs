@@ -9,6 +9,7 @@ namespace System.Activities.XamlIntegration
     using System.Runtime.Serialization;
     using System.Collections.Generic;
     using System.Activities.Internals;
+    using Newtonsoft.Json;
 
     [DataContract(Name = XD.CompiledLocation.Name, Namespace = XD.Runtime.Namespace)]
     public class CompiledLocation<T> : Location<T>
@@ -55,6 +56,7 @@ namespace System.Activities.XamlIntegration
             }
         }
 
+        [JsonConstructor]
         public CompiledLocation(Func<T> getMethod, Action<T> setMethod)
         {
             //
