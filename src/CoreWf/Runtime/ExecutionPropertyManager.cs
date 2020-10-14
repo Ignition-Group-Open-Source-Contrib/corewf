@@ -10,7 +10,7 @@ namespace System.Activities.Runtime
     using Newtonsoft.Json;
 
     [DataContract]
-    public class ExecutionPropertyManager
+    internal class ExecutionPropertyManager
     {
         private ActivityInstance owningInstance;
         private Dictionary<string, ExecutionProperty> properties;
