@@ -14,7 +14,10 @@ namespace System.Activities.Statements
             
         public CompensationToken(CompensationTokenData tokenData)
         {
-            this.CompensationId = tokenData.CompensationId;
+            if (tokenData != null)
+            {
+                this.CompensationId = tokenData.CompensationId;
+            }
         }
         
         [DataMember(EmitDefaultValue = false)]
