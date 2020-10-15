@@ -443,7 +443,7 @@ namespace System.Activities
         }
 
         [DataContract]
-        internal sealed class VariableLocation : Location<T>, INotifyPropertyChanged
+        public sealed class VariableLocation : Location<T>, INotifyPropertyChanged
         {
             private VariableModifiers modifiers;
             private bool isHandle;
