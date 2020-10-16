@@ -138,7 +138,7 @@ namespace System.Activities
         }
 
 
-        internal static Bookmark Create(long id)
+        public static Bookmark Create(long id)
         {
             return new Bookmark(id);
         }

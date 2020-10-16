@@ -16,7 +16,7 @@ namespace System.Activities.Statements
         private static readonly XName compensationExtensionData = compensationNamespace.GetName("Data");
 
         [Fx.Tag.SynchronizationObject(Blocking = false)]
-        private Dictionary<long, CompensationTokenData> compensationTokenTable;            
+        private Dictionary<long, CompensationTokenData> compensationTokenTable;
 
         public CompensationExtension()
         {
@@ -40,7 +40,7 @@ namespace System.Activities.Statements
             get;
             set;
         }
-        
+
         internal Bookmark WorkflowCompensation
         {
             get;
@@ -86,7 +86,7 @@ namespace System.Activities.Statements
         internal CompensationTokenData Get(long compensationId)
         {
             this.CompensationTokenTable.TryGetValue(compensationId, out CompensationTokenData compensationToken);
-            return compensationToken;   
+            return compensationToken;
         }
 
         internal Bookmark FindBookmark(long compensationId, CompensationBookmarkName bookmarkName)
@@ -129,7 +129,7 @@ namespace System.Activities.Statements
             else
             {
                 throw FxTrace.Exception.AsError(new InvalidOperationException(SR.BookmarkNotRegistered(compensationBookmark)));
-            }         
+            }
         }
 
         //[SuppressMessage(FxCop.Category.Design, FxCop.Rule.InterfaceMethodsShouldBeCallableByChildTypes,
@@ -153,7 +153,7 @@ namespace System.Activities.Statements
             readWriteValues = new Dictionary<XName, object>(1)
             {
                 {
-                    compensationExtensionData, 
+                    compensationExtensionData,
                     new List<object>(6)
                     {
                         this.CompensationTokenTable,
@@ -173,13 +173,16 @@ namespace System.Activities.Statements
             if (readWriteValues.TryGetValue(compensationExtensionData, out object data))
             {
                 List<object> list = (List<object>)data;
+
+
+
                 this.CompensationTokenTable = (Dictionary<long, CompensationTokenData>)list[0];
-                this.WorkflowCompensation = (Bookmark)list[1];
-                this.WorkflowConfirmation = (Bookmark)list[2];
-                this.WorkflowCompensationScheduled = (Bookmark)list[3];
+                this.WorkflowCompensation = list[1].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[1].ToString())) : (Bookmark)list[1];
+                this.WorkflowConfirmation = list[2].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[2].ToString())) : (Bookmark)list[2];
+                this.WorkflowCompensationScheduled = list[3].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[3].ToString())) : (Bookmark)list[3];
                 this.IsWorkflowCompensationBehaviorScheduled = (bool)list[4];
                 this.Id = (long)list[5];
             }
-        }      
+        }
     }
 }
