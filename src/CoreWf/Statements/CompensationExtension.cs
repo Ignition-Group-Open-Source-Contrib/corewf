@@ -177,9 +177,9 @@ namespace System.Activities.Statements
 
 
                 this.CompensationTokenTable = (Dictionary<long, CompensationTokenData>)list[0];
-                this.WorkflowCompensation = list[1].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[1].ToString())) : (Bookmark)list[1];
-                this.WorkflowConfirmation = list[2].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[2].ToString())) : (Bookmark)list[2];
-                this.WorkflowCompensationScheduled = list[3].GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[3].ToString())) : (Bookmark)list[3];
+                this.WorkflowCompensation = list[1]?.GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[1].ToString())) : (Bookmark)list[1];
+                this.WorkflowConfirmation = list[2]?.GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[2].ToString())) : (Bookmark)list[2];
+                this.WorkflowCompensationScheduled = list[3]?.GetType() == typeof(string) ? Bookmark.Create(Int64.Parse(list[3].ToString())) : (Bookmark)list[3];
                 this.IsWorkflowCompensationBehaviorScheduled = (bool)list[4];
                 this.Id = (long)list[5];
             }
